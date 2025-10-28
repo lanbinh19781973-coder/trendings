@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Market - Breaking News</title>
+
+    <!-- Import font (tương tự như trong ảnh) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import icon (ví dụ sử dụng Bootstrap Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- Liên kết đến file CSS bên ngoài -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ======== HEADER / NAVBAR ======== -->
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="#" class="logo">
+          <!-- THAY ĐỔI Ở ĐÂY: Sử dụng icon Bootstrap thay vì img -->
+          <div class="logo-icon">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <span>Binary Market</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#">Markets</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Analytics</a>
+          <a href="#" class="active">Breaking News</a>
+          <a href="#">Docs</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <div class="search-bar">
+          <i class="bi bi-search"></i>
+          <input type="search" placeholder="Search markets...." />
+        </div>
+        <button class="btn btn-primary">Connect Wallet</button>
+      </div>
+    </header>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="container">
+      <!-- --- Top Bar --- -->
+      <div class="main-header">
+        <div class="main-header-left">
+          <h1>Breaking News <span class="live-badge">⚡ LIVE</span></h1>
+          <p>Markets with the biggest changes in the last 24h</p>
+        </div>
+        <div class="main-header-right">
+          <button class="btn-filter">
+            <i class="bi bi-sliders"></i> Filters
+          </button>
+          <div class="toggle-switch">
+            <input type="checkbox" id="show-rising" class="toggle-input" />
+            <label for="show-rising" class="toggle-label"></label>
+            <span>Show only Rising</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- --- Category Filters --- -->
+      <nav class="category-filters">
+        <button class="category-btn active">All Categories</button>
+        <button class="category-btn">Politics</button>
+        <button class="category-btn">Sports</button>
+        <button class="category-btn">Crypto</button>
+        <button class="category-btn">AI & Tech</button>
+        <button class="category-btn">Finance</button>
+      </nav>
+
+      <!-- --- Market Grid --- -->
+      <div class="market-grid">
+        <!-- Card 1: Politics (Green) -->
+        <article class="market-card">
+          <div class="card-header">
+            <span class="card-category politics">Politics</span>
+            <span class="card-change positive"
+              ><i class="bi bi-arrow-up"></i> +18%</span
+            >
+          </div>
+          <h2 data-question="Two wins GOP Primary in New Hampshire?">
+            Two wins GOP Primary in New Hampshire?
+          </h2>
+          <div class="card-chart">
+            <!-- Placeholder cho biểu đồ đường (sparkline) --><svg
+              class="sparkline positive"
+              width="100%"
+              height="40"
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M 0 30 L 10 25, 20 28, 30 20, 40 22, 50 15, 60 18, 70 10, 80 12, 90 5, 100 8"
+              />
+            </svg>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-main">
+              <div class="card-volume">
+                <span>24h Volume</span>
+                <strong>$2.1M</strong>
+              </div>
+              <button class="btn btn-trade positive">Trade</button>
+            </div>
+            <button
+              class="btn-ai"
+              data-market-question="Two wins GOP Primary in New Hampshire?"
+            >
+              ✨ AI Analysis
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2: Crypto (Red) -->
+        <article class="market-card">
+          <div class="card-header">
+            <span class="card-category crypto">Crypto</span>
+            <span class="card-change negative"
+              ><i class="bi bi-arrow-down"></i> -15%</span
+            >
+          </div>
+          <h2 data-question="Bitcoin crashes below $40K this month?">
+            Bitcoin crashes below $40K this month?
+          </h2>
+          <div class="card-chart">
+            <svg
+              class="sparkline negative"
+              width="100%"
+              height="40"
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M 0 10 L 10 15, 20 12, 30 20, 40 18, 50 25, 60 22, 70 30, 80 28, 90 35, 100 32"
+              />
+            </svg>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-main">
+              <div class="card-volume">
+                <span>24h Volume</span>
+                <strong>$1.8M</strong>
+              </div>
+              <button class="btn btn-trade negative">Trade</button>
+            </div>
+            <button
+              class="btn-ai"
+              data-market-question="Bitcoin crashes below $40K this month?"
+            >
+              ✨ AI Analysis
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3: Sports (Green) -->
+        <article class="market-card">
+          <div class="card-header">
+            <span class="card-category sports">Sports</span>
+            <span class="card-change positive"
+              ><i class="bi bi-arrow-up"></i> +12%</span
+            >
+          </div>
+          <h2 data-question="Chiefs win Super Bowl 2025?">
+            Chiefs win Super Bowl 2025?
+          </h2>
+          <div class="card-chart">
+            <svg
+              class="sparkline positive"
+              width="100%"
+              height="40"
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M 0 30 L 10 25, 20 28, 30 20, 40 22, 50 15, 60 18, 70 10, 80 12, 90 5, 100 8"
+              />
+            </svg>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-main">
+              <div class="card-volume">
+                <span>24h Volume</span>
+                <strong>$950K</strong>
+              </div>
+              <button class="btn btn-trade positive">Trade</button>
+            </div>
+            <button
+              class="btn-ai"
+              data-market-question="Chiefs win Super Bowl 2025?"
+            >
+              ✨ AI Analysis
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4: AI & Tech (Grey) -->
+        <article class="market-card">
+          <div class="card-header">
+            <span class="card-category aitech">AI & Tech</span>
+            <span class="card-change neutral"
+              ><i class="bi bi-arrow-right"></i> +0%</span
+            >
+          </div>
+          <h2 data-question="Apple releases AR glasses in 2025?">
+            Apple releases AR glasses in 2025?
+          </h2>
+          <div class="card-chart">
+            <svg
+              class="sparkline neutral"
+              width="100%"
+              height="40"
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M 0 20 L 10 22, 20 18, 30 20, 40 22, 50 20, 60 18, 70 20, 80 18, 90 20, 100 20"
+              />
+            </svg>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-main">
+              <div class="card-volume">
+                <span>24h Volume</span>
+                <strong>$720K</strong>
+              </div>
+              <button class="btn btn-trade neutral">Trade</button>
+            </div>
+            <button
+              class="btn-ai"
+              data-market-question="Apple releases AR glasses in 2025?"
+            >
+              ✨ AI Analysis
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 5: Finance (Green) -->
+        <article class="market-card">
+          <div class="card-header">
+            <span class="card-category finance">Finance</span>
+            <span class="card-change positive"
+              ><i class="bi bi-arrow-up"></i> +7%</span
+            >
+          </div>
+          <h2 data-question="Fed cuts rates below 4% by March?">
+            Fed cuts rates below 4% by March?
+          </h2>
+          <div class="card-chart">
+            <svg
+              class="sparkline positive"
+              width="100%"
+              height="40"
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M 0 30 L 10 25, 20 28, 30 20, 40 22, 50 15, 60 18, 70 10, 80 12, 90 5, 100 8"
+              />
+            </svg>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-main">
+              <div class="card-volume">
+                <span>24h Volume</span>
+                <strong>$1.3M</strong>
+              </div>
+              <button class="btn btn-trade positive">Trade</button>
+            </div>
+            <button
+              class="btn-ai"
+              data-market-question="Fed cuts rates below 4% by March?"
+            >
+              ✨ AI Analysis
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 6: Crypto (Red) -->
+        <article class="market-card">
+          <div class="card-header">
+            <span class="card-category crypto">Crypto</span>
+            <span class="card-change negative"
+              ><i class="bi bi-arrow-down"></i> -11%</span
+            >
+          </div>
+          <h2 data-question="Solana flips Ethereum by market cap?">
+            Solana flips Ethereum by market cap?
+          </h2>
+          <div class="card-chart">
+            <svg
+              class="sparkline negative"
+              width="100%"
+              height="40"
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M 0 10 L 10 15, 20 12, 30 20, 40 18, 50 25, 60 22, 70 30, 80 28, 90 35, 100 32"
+              />
+            </svg>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-main">
+              <div class="card-volume">
+                <span>24h Volume</span>
+                <strong>$640K</strong>
+              </div>
+              <button class="btn btn-trade negative">Trade</button>
+            </div>
+            <button
+              class="btn-ai"
+              data-market-question="Solana flips Ethereum by market cap?"
+            >
+              ✨ AI Analysis
+            </button>
+          </div>
+        </article>
+      </div>
+      <!-- .market-grid --><button class="btn-load-more">
+        Load More Trending Markets
+      </button>
+
+      <!-- --- CTA Section --- -->
+      <section class="cta-section">
+        <div class="cta-icon">
+          <i class="bi bi-bell-fill"></i>
+        </div>
+        <h2>Never Miss a Market Movement</h2>
+        <p>
+          Get instant notifications when your favorite markets experience
+          significant price changes or volume spikes.
+        </p>
+        <button class="btn btn-primary">Set Up Alerts</button>
+      </section>
+    </main>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <a href="#" class="logo">
+            <!-- THAY ĐỔI Ở ĐÂY: Sử dụng icon Bootstrap thay vì img cho footer logo -->
+            <div class="logo-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <span>Binary Market</span>
+          </a>
+          <p>The world's leading decentralized prediction market platform.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-discord"></i></a>
+            <a href="#"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <strong>Markets</strong>
+            <a href="#">Politics</a>
+            <a href="#">Crypto</a>
+            <a href="#">Sports</a>
+            <a href="#">Technology</a>
+          </div>
+          <div class="footer-column">
+            <strong>Learn</strong>
+            <a href="#">Documentation</a>
+            <a href="#">How it Works</a>
+            <a href="#">FAQ</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="footer-column">
+            <strong>Company</strong>
+            <a href="#">About</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        © 2024 Binary Market. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- ======== MODAL CHO AI ANALYSIS ======== -->
+    <div id="ai-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <span class="modal-close" id="modal-close-btn">&times;</span>
+        <h3>✨ AI Analysis</h3>
+
+        <!-- Vùng nội dung (ban đầu ẩn) -->
+        <div id="ai-response-container" class="hidden">
+          <div id="ai-analysis-content"></div>
+          <div id="ai-analysis-sources">
+            <h4>Nguồn thông tin (từ Google Search):</h4>
+            <ul id="ai-sources-list"></ul>
+          </div>
+        </div>
+
+        <!-- Trạng thái loading (ban đầu hiển thị) -->
+        <div id="ai-loading" class="">
+          <div class="loader"></div>
+          <p style="text-align: center; color: var(--color-text-secondary)">
+            Đang phân tích thông tin mới nhất...
+          </p>
+        </div>
+
+        <!-- Trạng thái lỗi (ban đầu ẩn) -->
+        <div id="ai-error" class="hidden">
+          <p style="text-align: center; color: var(--color-negative)">
+            Không thể tải phân tích. Vui lòng thử lại sau.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== JAVASCRIPT CHO GEMINI API ======== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("ai-modal");
+        const closeModalBtn = document.getElementById("modal-close-btn");
+        const aiButtons = document.querySelectorAll(".btn-ai");
+
+        const contentContainer = document.getElementById(
+          "ai-response-container"
+        );
+        const loadingContainer = document.getElementById("ai-loading");
+        const errorContainer = document.getElementById("ai-error");
+
+        const analysisContent = document.getElementById("ai-analysis-content");
+        const sourcesList = document.getElementById("ai-sources-list");
+
+        // --- Hàm điều khiển Modal ---
+        const openModal = () => {
+          modal.classList.remove("hidden");
+          // Đặt lại trạng thái modal
+          loadingContainer.classList.remove("hidden");
+          contentContainer.classList.add("hidden");
+          errorContainer.classList.add("hidden");
+          analysisContent.textContent = "";
+          sourcesList.innerHTML = "";
+        };
+
+        const closeModal = () => {
+          modal.classList.add("hidden");
+        };
+
+        // Đóng modal khi nhấp vào nút close hoặc bên ngoài
+        closeModalBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+
+        // --- Thêm sự kiện cho tất cả các nút AI ---
+        aiButtons.forEach((button) => {
+          button.addEventListener("click", async () => {
+            const marketQuestion = button.getAttribute("data-market-question");
+            if (!marketQuestion) return;
+
+            openModal(); // Mở modal và hiển thị loading
+
+            try {
+              // Gọi API
+              const result = await callGeminiApi(marketQuestion);
+
+              // Hiển thị kết quả
+              analysisContent.textContent = result.text;
+
+              // Hiển thị nguồn
+              if (result.sources && result.sources.length > 0) {
+                result.sources.forEach((source) => {
+                  const li = document.createElement("li");
+                  const a = document.createElement("a");
+                  a.href = source.uri;
+                  a.textContent = source.title;
+                  a.target = "_blank"; // Mở trong tab mới
+                  a.rel = "noopener noreferrer";
+                  li.appendChild(a);
+                  sourcesList.appendChild(li);
+                });
+                document
+                  .getElementById("ai-analysis-sources")
+                  .classList.remove("hidden");
+              } else {
+                // Ẩn phần nguồn nếu không có
+                document
+                  .getElementById("ai-analysis-sources")
+                  .classList.add("hidden");
+              }
+
+              // Ẩn loading, hiển thị nội dung
+              loadingContainer.classList.add("hidden");
+              contentContainer.classList.remove("hidden");
+              errorContainer.classList.add("hidden");
+            } catch (error) {
+              console.error("Error calling Gemini API:", error);
+              // Hiển thị thông báo lỗi
+              loadingContainer.classList.add("hidden");
+              contentContainer.classList.add("hidden");
+              errorContainer.classList.remove("hidden");
+            }
+          });
+        });
+
+        // --- Hàm gọi API Gemini ---
+        async function callGeminiApi(
+          marketQuestion,
+          retries = 3,
+          delay = 1000
+        ) {
+          // ***QUAN TRỌNG***: Trong một ứng dụng thực tế, KHÓA API sẽ được để trống.
+          // const apiKey = "";
+          // Tuy nhiên, để demo này hoạt động, tôi sẽ để trống như quy định.
+          const apiKey = ""; // Canvas sẽ tự động cung cấp khóa API khi chạy.
+          const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+          // Hướng dẫn hệ thống cho AI
+          const systemPrompt = `Bạn là một nhà phân tích thị trường và tin tức. 
+Nhiệm vụ của bạn là cung cấp một phân tích ngắn gọn (2-3 câu), khách quan và cân bằng về khả năng xảy ra của sự kiện sau đây, dựa trên thông tin tìm kiếm công khai mới nhất. 
+KHÔNG đưa ra lời khuyên tài chính. 
+Chỉ tập trung vào việc phân tích các yếu tố 'đồng ý' và 'phản đối' sự kiện này.
+Trả lời bằng tiếng Việt.`;
+
+          // Truy vấn của người dùng
+          const userQuery = `Phân tích khả năng xảy ra của sự kiện này: "${marketQuestion}"`;
+
+          const payload = {
+            contents: [{ parts: [{ text: userQuery }] }],
+            // Kích hoạt Google Search grounding
+            tools: [{ google_search: {} }],
+            systemInstruction: {
+              parts: [{ text: systemPrompt }],
+            },
+          };
+
+          // Logic thử lại (Exponential Backoff)
+          for (let i = 0; i < retries; i++) {
+            try {
+              const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              });
+
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+
+              const result = await response.json();
+              const candidate = result.candidates?.[0];
+
+              if (candidate && candidate.content?.parts?.[0]?.text) {
+                const text = candidate.content.parts[0].text;
+
+                // Trích xuất nguồn
+                let sources = [];
+                const groundingMetadata = candidate.groundingMetadata;
+                if (
+                  groundingMetadata &&
+                  groundingMetadata.groundingAttributions
+                ) {
+                  sources = groundingMetadata.groundingAttributions
+                    .map((attribution) => ({
+                      uri: attribution.web?.uri,
+                      title: attribution.web?.title,
+                    }))
+                    .filter((source) => source.uri && source.title); // Đảm bảo nguồn hợp lệ
+                }
+
+                return { text, sources };
+              } else {
+                throw new Error("Invalid response structure from API.");
+              }
+            } catch (error) {
+              console.warn(
+                `API call attempt ${i + 1} failed. Retrying in ${delay}ms...`,
+                error.message
+              );
+              if (i === retries - 1) throw error; // Ném lỗi ở lần thử cuối cùng
+              await new Promise((resolve) => setTimeout(resolve, delay));
+              delay *= 2; // Tăng thời gian chờ
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
